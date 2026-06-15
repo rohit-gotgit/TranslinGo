@@ -1,0 +1,51 @@
+# Cloud Build configuration for automated deployments
+# This allows you to deploy by pushing to a Git branch
+
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/translingo-server:$SHORT_SHA', '-t', 'gcr.io/$PROJECT_ID/translingo-server:latest', '.']
+  
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/translingo-server:$SHORT_SHA']
+  
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/translingo-server:latest']
+  
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'translingo-server'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/translingo-server:$SHORT_SHA'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--min-instances'
+      - '0'
+      - '--max-instances'
+      - '10'
+      - '--cpu'
+      - '1'
+      - '--memory'
+      - '512Mi'
+      - '--timeout'
+      - '300'
+      - '--concurrency'
+      - '80'
+      - '--port'
+      - '3001'
+
+images:
+  - 'gcr.io/$PROJECT_ID/translingo-server:$SHORT_SHA'
+  - 'gcr.io/$PROJECT_ID/translingo-server:latest'
+
+options:
+  machineType: 'E2_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
