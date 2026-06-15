@@ -1,29 +1,28 @@
 <div align="center">
-  <img src="client/public/readme_logo.png" alt="Translingo Logo" width="200"/>
-  <h1>Translingo 💬🌍</h1>
-  <p><strong>A Real-Time Multilingual Chat Application</strong></p>
-  <p>Breaking down language barriers with seamless real-time communication</p>
-  
-  ![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react)
-  ![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js)
-  ![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?logo=mongodb)
-  ![Socket.io](https://img.shields.io/badge/Socket.io-4.8.1-010101?logo=socket.io)
-  ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript)
-  
-  [🚀 Live Demo](https://translingo-mu.vercel.app) • [📖 Documentation](#-how-it-works) • [🛠️ Setup](#-getting-started) • [📊 Database Schema](#-database-schema)
+
+# TranslinGo
+
+Real-Time Communication Infrastructure for Modern Web Applications
+
+<br>
+
+<img src="https://img.shields.io/badge/React-Frontend-61DAFB?logo=react&logoColor=white" />
+<img src="https://img.shields.io/badge/Node.js-Backend-339933?logo=node.js&logoColor=white" />
+<img src="https://img.shields.io/badge/MongoDB-Database-47A248?logo=mongodb&logoColor=white" />
+<img src="https://img.shields.io/badge/Socket.IO-Real--Time%20Messaging-010101?logo=socket.io&logoColor=white" />
+<img src="https://img.shields.io/badge/JWT-Authentication-orange" />
+
 </div>
 
 ---
 
-## 📸 Preview
+## Overview
 
-<div align="center">
-  <img src="client/public/readme_main.png" alt="Translingo Application Preview" width="800"/>
-</div>
+Translingo is a real-time chat application designed for secure and efficient communication. Built with Socket.io, it enables seamless instant messaging and file sharing, allowing users to send images, documents, and media effortlessly. The platform leverages Multer and Cloudinary for cloud-based file storage, ensuring optimized performance, accessibility, and data persistence. A robust authentication system safeguards user accounts and conversations, with potential end-to-end encryption to enhance privacy and security.
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [About the Project](#-about-the-project)
 - [Features](#-features)
@@ -40,71 +39,71 @@
 
 ---
 
-## 🎯 About the Project
+##  About the Project
 
 **Translingo** is a full-stack real-time chat application designed to facilitate seamless communication across different languages. The application supports both one-on-one direct messages and group channels, enabling users to connect and communicate instantly.
 
 ### Key Highlights
 
-- ⚡ **Real-time Communication**: Instant message delivery using WebSocket technology
-- 🔒 **Secure Authentication**: JWT-based authentication with HTTP-only cookies
-- 📁 **File Sharing**: Upload and share images, documents via Cloudinary
-- 👥 **Group Channels**: Create and manage group conversations
-- 🎨 **Modern UI**: Beautiful, responsive interface built with React and Tailwind CSS
-- 🚀 **Production Ready**: Deployed on scalable cloud infrastructure
+-  **Real-time Communication**: Instant message delivery using WebSocket technology
+-  **Secure Authentication**: JWT-based authentication with HTTP-only cookies
+-  **File Sharing**: Upload and share images, documents via Cloudinary
+-  **Group Channels**: Create and manage group conversations
+-  **Modern UI**: Beautiful, responsive interface built with React and Tailwind CSS
+-  **Production Ready**: Deployed on scalable cloud infrastructure
 
 ---
 
-## ✨ Features
+##  Features
 
 ### Core Functionality
-- ✅ **Real-time Messaging**: Instant bidirectional communication using Socket.io
-- ✅ **Direct Messages**: Private one-on-one conversations
-- ✅ **Group Channels**: Create channels, add/remove members, manage permissions
-- ✅ **File Sharing**: Upload images and documents (up to 10MB)
-- ✅ **User Profiles**: Customizable profiles with avatar uploads
-- ✅ **Contact Management**: Search and manage contacts
-- ✅ **Message History**: Persistent message storage and retrieval
-- ✅ **Emoji Support**: Rich emoji picker for expressive messaging
+-  **Real-time Messaging**: Instant bidirectional communication using Socket.io
+-  **Direct Messages**: Private one-on-one conversations
+-  **Group Channels**: Create channels, add/remove members, manage permissions
+-  **File Sharing**: Upload images and documents (up to 10MB)
+-  **User Profiles**: Customizable profiles with avatar uploads
+-  **Contact Management**: Search and manage contacts
+-  **Message History**: Persistent message storage and retrieval
+-  **Emoji Support**: Rich emoji picker for expressive messaging
 
 ### User Experience
-- ✅ **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
-- ✅ **Loading States**: Visual feedback for all async operations
-- ✅ **Form Validation**: Real-time validation with helpful error messages
-- ✅ **Error Handling**: Graceful error boundaries and user-friendly messages
-- ✅ **Smooth Animations**: Polished UI with Framer Motion animations
+-  **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+-  **Loading States**: Visual feedback for all async operations
+-  **Form Validation**: Real-time validation with helpful error messages
+-  **Error Handling**: Graceful error boundaries and user-friendly messages
+-  **Smooth Animations**: Polished UI with Framer Motion animations
 
 ### Security & Performance
-- ✅ **Rate Limiting**: Protection against abuse (API, Auth, Upload endpoints)
-- ✅ **Input Validation**: Comprehensive validation on client and server
-- ✅ **File Validation**: Type and size validation for uploads
-- ✅ **Password Hashing**: Bcrypt with salt rounds
-- ✅ **CORS Protection**: Configured for secure cross-origin requests
+-  **Rate Limiting**: Protection against abuse (API, Auth, Upload endpoints)
+-  **Input Validation**: Comprehensive validation on client and server
+-  **File Validation**: Type and size validation for uploads
+-  **Password Hashing**: Bcrypt with salt rounds
+-  **CORS Protection**: Configured for secure cross-origin requests
 
 ---
 
-## 🔄 How It Works
+##  How It Works
 
 ### Architecture Overview
 
 Translingo follows a **client-server architecture** with real-time WebSocket communication:
 
 ```
-┌─────────────┐         HTTP/REST API         ┌─────────────┐
+┌─────────────┐         HTTP/REST API          ┌─────────────┐
 │   React     │◄──────────────────────────────►│   Express   │
-│   Client    │                                 │   Server    │
-└─────────────┘                                 └─────────────┘
-       │                                               │
-       │         WebSocket (Socket.io)                │
+│   Client    │                                │   Server    │
+└─────────────┘                                └─────────────┘
+       │                                             │
+       │         WebSocket (Socket.io)               │
        └─────────────────────────────────────────────┘
-                                                      │
-                                                      ▼
+                                                     │
+                                                     ▼
                                             ┌─────────────┐
                                             │   MongoDB   │
                                             │  Database   │
                                             └─────────────┘
-                                                      │
-                                                      ▼
+                                                     │
+                                                     ▼
                                             ┌─────────────┐
                                             │ Cloudinary  │
                                             │ File Storage│
@@ -146,7 +145,7 @@ Translingo follows a **client-server architecture** with real-time WebSocket com
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 | Technology | Version | Purpose |
@@ -176,7 +175,7 @@ Translingo follows a **client-server architecture** with real-time WebSocket com
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -270,13 +269,13 @@ This will create:
 - Email: Any user email from the seed (e.g., `rahul.sharma@example.com`)
 - Password: `Password123`
 
-⚠️ **Note**: This will delete all existing data in the database!
+ **Note**: This will delete all existing data in the database!
 
 For more details, see [server/src/scripts/README.md](server/src/scripts/README.md)
 
 ---
 
-## 📊 Database Schema
+##  Database Schema
 
 ### User Model
 
@@ -344,7 +343,7 @@ All models are stored in the MongoDB database named `chatApp`.
 
 ---
 
-## 🔌 API Documentation
+##  API Documentation
 
 ### Base URL
 ```
@@ -404,7 +403,7 @@ Production: https://your-service-url.run.app/api/v1
 
 ---
 
-## 🚢 Deployment
+##  Deployment
 
 ### Backend: Google Cloud Run
 
@@ -467,11 +466,11 @@ The frontend is deployed on **Vercel** for optimal performance and CDN distribut
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 ### Production URLs
 
-- **Frontend**: [https://translingo-mu.vercel.app](https://translingo-mu.vercel.app) 🚀
+- **Frontend**: [https://translingo-mu.vercel.app](https://translingo-mu.vercel.app) 
 - **Backend API**: Deployed on Google Cloud Run
 
 ### Try It Out
@@ -490,37 +489,37 @@ Visit the live application and experience real-time chat functionality:
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                        Client Layer                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
-│  │   React App  │  │  Redux Store │  │ Socket Client│    │
-│  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                        Client Layer                         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │   React App  │  │  Redux Store │  │ Socket Client│       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
                             │
                             │ HTTP/REST + WebSocket
                             │
 ┌─────────────────────────────────────────────────────────────┐
 │                      Application Layer                      │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
-│  │   Express    │  │  Socket.io   │  │  Middlewares  │    │
-│  │     API      │  │    Server   │  │  (Auth, etc) │    │
-│  └──────────────┘  └──────────────┘  └──────────────┘    │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │   Express    │  │  Socket.io   │  │  Middlewares │       │
+│  │     API      │  │    Server    │  │  (Auth, etc) │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
                             │
                             │
 ┌─────────────────────────────────────────────────────────────┐
-│                        Data Layer                            │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
-│  │   MongoDB    │  │  Cloudinary  │  │   JWT Store  │    │
-│  │  (Messages,  │  │  (File Store)│  │  (Cookies)   │    │
-│  │   Users,     │  │              │  │              │    │
-│  │  Channels)   │  │              │  │              │    │
-│  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                        Data Layer                           │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │   MongoDB    │  │  Cloudinary  │  │   JWT Store  │       │
+│  │  (Messages,  │  │  (File Store)│  │  (Cookies)   │       │
+│  │   Users,     │  │              │  │              │       │
+│  │  Channels)   │  │              │  │              │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -543,57 +542,57 @@ Visit the live application and experience real-time chat functionality:
 
 ---
 
-## 🔒 Security Features
+##  Security Features
 
 ### Authentication & Authorization
-- ✅ **JWT Tokens**: Secure token-based authentication
-- ✅ **HTTP-only Cookies**: Prevents XSS attacks
-- ✅ **Password Hashing**: Bcrypt with salt rounds
-- ✅ **Protected Routes**: Middleware verification for all sensitive endpoints
+-  **JWT Tokens**: Secure token-based authentication
+-  **HTTP-only Cookies**: Prevents XSS attacks
+-  **Password Hashing**: Bcrypt with salt rounds
+-  **Protected Routes**: Middleware verification for all sensitive endpoints
 
 ### Rate Limiting
-- ✅ **API Endpoints**: 100 requests per 15 minutes per IP
-- ✅ **Authentication**: 5 attempts per 15 minutes per IP
-- ✅ **File Uploads**: 10 uploads per hour per IP
+-  **API Endpoints**: 100 requests per 15 minutes per IP
+-  **Authentication**: 5 attempts per 15 minutes per IP
+-  **File Uploads**: 10 uploads per hour per IP
 
 ### Input Validation
-- ✅ **Client-side**: Real-time validation with helpful error messages
-- ✅ **Server-side**: Comprehensive validation for all inputs
-- ✅ **File Validation**: Type and size validation (max 10MB)
-- ✅ **Email Validation**: Regex pattern matching
-- ✅ **Password Requirements**: Minimum 8 characters
+-  **Client-side**: Real-time validation with helpful error messages
+-  **Server-side**: Comprehensive validation for all inputs
+-  **File Validation**: Type and size validation (max 10MB)
+-  **Email Validation**: Regex pattern matching
+-  **Password Requirements**: Minimum 8 characters
 
 ### Data Protection
-- ✅ **CORS Configuration**: Restricted to allowed origins
-- ✅ **Environment Variables**: Sensitive data stored securely
-- ✅ **Error Handling**: No sensitive data exposed in error messages
-- ✅ **SQL Injection Prevention**: Using Mongoose ODM (NoSQL)
+-  **CORS Configuration**: Restricted to allowed origins
+-  **Environment Variables**: Sensitive data stored securely
+-  **Error Handling**: No sensitive data exposed in error messages
+-  **SQL Injection Prevention**: Using Mongoose ODM (NoSQL)
 
 ---
 
-## ⚡ Performance Optimizations
+##  Performance Optimizations
 
 ### Frontend
-- ✅ **Code Splitting**: Lazy loading with React Router
-- ✅ **Memoization**: React.memo and useMemo for expensive computations
-- ✅ **Optimized Images**: Cloudinary CDN for fast image delivery
-- ✅ **Bundle Optimization**: Vite for fast builds and HMR
+-  **Code Splitting**: Lazy loading with React Router
+-  **Memoization**: React.memo and useMemo for expensive computations
+-  **Optimized Images**: Cloudinary CDN for fast image delivery
+-  **Bundle Optimization**: Vite for fast builds and HMR
 
 ### Backend
-- ✅ **Database Indexing**: Indexed fields for faster queries
-- ✅ **Connection Pooling**: MongoDB connection reuse
-- ✅ **File Streaming**: Efficient file upload handling
-- ✅ **Caching**: Socket.io connection reuse
+-  **Database Indexing**: Indexed fields for faster queries
+-  **Connection Pooling**: MongoDB connection reuse
+-  **File Streaming**: Efficient file upload handling
+-  **Caching**: Socket.io connection reuse
 
 ### Infrastructure
-- ✅ **CDN**: Vercel CDN for static assets
-- ✅ **Auto-scaling**: Cloud Run scales based on traffic
-- ✅ **Serverless**: Pay only for what you use
-- ✅ **Geographic Distribution**: Vercel edge network
+-  **CDN**: Vercel CDN for static assets
+-  **Auto-scaling**: Cloud Run scales based on traffic
+-  **Serverless**: Pay only for what you use
+-  **Geographic Distribution**: Vercel edge network
 
 ---
 
-## 📝 Project Structure
+##  Project Structure
 
 ```
 Translingo/
@@ -668,7 +667,7 @@ Translingo/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 *Note: Testing infrastructure can be added*
 
@@ -685,22 +684,22 @@ Translingo/
 
 ---
 
-## 🐛 Known Issues & Solutions
+##  Known Issues & Solutions
 
 ### Fixed Issues
-- ✅ Fixed dotenv path configuration in server
-- ✅ Fixed missing `path` import in Cloudinary utility
-- ✅ Replaced hardcoded URLs with environment variables
-- ✅ Fixed double slash bug in API constants
-- ✅ Added comprehensive input validation
-- ✅ Added loading states for better UX
-- ✅ Added React error boundaries
-- ✅ Added rate limiting for security
-- ✅ Added file upload validation
+-  Fixed dotenv path configuration in server
+-  Fixed missing `path` import in Cloudinary utility
+-  Replaced hardcoded URLs with environment variables
+-  Fixed double slash bug in API constants
+-  Added comprehensive input validation
+-  Added loading states for better UX
+-  Added React error boundaries
+-  Added rate limiting for security
+-  Added file upload validation
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -712,23 +711,19 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the ISC License.
 
 ---
 
-## 👤 Author
+##  Author
 
-**Roshan Kumar Sahu**
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+**Rohit Kumar**
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [Socket.io](https://socket.io/) - Real-time communication
 - [Cloudinary](https://cloudinary.com/) - Cloud file storage
@@ -737,9 +732,4 @@ This project is licensed under the ISC License.
 - [Google Cloud](https://cloud.google.com/) - Backend hosting
 - All the amazing open-source libraries that made this project possible
 
----
 
-<div align="center">
-  <p>Made with ❤️ for seamless communication across languages</p>
-  <p>⭐ Star this repo if you find it helpful!</p>
-</div>
