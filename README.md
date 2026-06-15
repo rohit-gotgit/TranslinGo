@@ -22,23 +22,6 @@ Translingo is a real-time chat application designed for secure and efficient com
 
 ---
 
-##  Table of Contents
-
-- [About the Project](#-about-the-project)
-- [Features](#-features)
-- [How It Works](#-how-it-works)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-- [Database Schema](#-database-schema)
-- [API Documentation](#-api-documentation)
-- [Deployment](#-deployment)
-- [Live Demo](#-live-demo)
-- [Architecture](#-architecture)
-- [Security Features](#-security-features)
-- [Performance Optimizations](#-performance-optimizations)
-
----
-
 ##  About the Project
 
 **Translingo** is a full-stack real-time chat application designed to facilitate seamless communication across different languages. The application supports both one-on-one direct messages and group channels, enabling users to connect and communicate instantly.
